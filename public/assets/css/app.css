@@ -1,0 +1,242 @@
+*, *::before, *::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    --fonte-principal: 'Poppins', sans-serif;
+    --fonte-secundaria: 'Roboto', sans-serif;
+    --gradiente: linear-gradient(178.69deg, #277EBD 1.12%, #5D5FEF 1.13%, #3536A9 98.88%);
+    --radius-1: 5px;
+    --radius-2: 10px;
+    --cor-1: hsl(210, 11%, 96%);
+    --cor-2: hsl(195, 60%, 94%);
+    --cor-3: hsl(240, 5%, 68%);
+    --cor-5: hsl(220, 83%, 88%);
+    --cor-6: hsl(239, 82%, 65%);
+    --cor-7: hsl(0, 100%, 89%);
+    --cor-8: hsl(0, 83%, 52%);
+    --cor-9: hsl(144, 76%, 87%);
+    --cor-10: hsl(142, 57%, 34%);
+    --cor-11: hsl(220, 3%, 21%);
+    --cor-12: hsl(214, 92%, 5%);
+}
+
+html {
+    background-color: var(--cor-1);
+}
+
+body {
+    position: relative;
+    /* min-height: 99vh;
+    min-width: 99vw; */
+}
+
+a {
+    text-decoration: none;
+}
+
+.bg-principal {
+    background: var(--cor-1);
+}
+
+.logo, .logo:hover {
+    font-weight: 900;
+    font-size: 2rem;
+    color: var(--cor-11);
+}
+
+.navbar a {
+    color: var(--cor-11);
+}
+
+.navbar a.ativo {
+    color: var(--cor-6);
+}
+
+.cor-principal {
+    color: var(--cor-6);
+}
+
+.fonte-principal {
+    font-family: var(--fonte-principal);
+}
+.fonte-secundaria {
+    font-family: var(--fonte-secundaria);
+}
+
+/* BOTOÊS CUSTOMIZADOS */
+.bg-gradiente {
+    color: var(--cor-1);
+    background: var(--gradiente);
+}
+
+.btn-custom {
+    padding: .5rem 2rem;
+    background: var(--gradiente);
+    opacity: .9;
+    color: var(--cor-1);
+    border-radius: var(--radius-1);
+    font-weight: 700;
+    text-transform: uppercase;
+    border: none;
+    box-shadow: 2px 2px 10px 1px #03233821;
+    transition: all ease .3s;
+    will-change: opacity;
+}
+
+.btn-custom:hover, .btn-custom:focus {
+    opacity: 1;
+    color: var(--cor-5);
+}
+
+.btn-editar, .btn-excluir, .btn-salvar {
+    padding: .5rem 1rem;
+    font-weight: bold;
+    font-family: var(--fonte-principal);
+    background: none;
+    color: var(--cor-6);
+    border: 2px solid var(--cor-6);
+    border-radius: 10px;
+    transition: all ease .3s;
+}
+
+.btn-excluir {
+    padding: 10px 1rem;
+    background: var(--cor-7);
+    color: var(--cor-8);
+    border: none;
+}
+
+.btn-excluir:hover {
+    background: var(--cor-8);
+    color: var(--cor-7);
+} 
+
+.btn-editar:hover {
+    background: var(--cor-6);
+    color: var(--cor-1);
+}
+
+.btn-salvar {
+    padding: 10px 1rem;
+    background: var(--cor-9);
+    color: var(--cor-10);
+    border: none;
+}
+
+.btn-salvar:hover {
+    background: var(--cor-10);
+    color: var(--cor-9);
+}
+
+/* TABELA de listagem */
+
+tbody, td, tfoot, th, thead, tr {
+    border: none;
+}
+thead th {
+    color: var(--cor-3);
+    font-family: var(--fonte-principal);
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+tbody tr {
+    padding: 30px 2rem;
+}
+tbody > tr:nth-of-type(2n+1) {
+    background: var(--cor-2);
+}
+
+td {
+    vertical-align: middle;
+}
+
+.status {
+    padding: .5rem 1rem;
+    font-family: var(--fonte-secundaria);
+    font-weight: bold;
+    font-size: .8rem;
+    border-radius: 10px;
+}
+
+.status.pago {
+    background: var(--cor-9);
+    color: var(--cor-10);
+}
+
+.status.aberto {
+    background: var(--cor-5);
+    color: var(--cor-6);
+}
+
+.status.cancelado {
+    background: var(--cor-7);
+    color: var(--cor-8);
+}
+
+
+/* MODAL */
+
+.modal-bg {
+    position: fixed;
+    top: 0;
+    left: 0;
+    height: 100vh;
+    width: 100%;
+    background: #1e252ccc;
+    z-index: 999;
+    justify-content: center;
+    align-items: center;
+}
+
+.modal-bg.show {
+    display: flex;
+    animation: showIn .3s ease-in ;
+}
+
+.modal-bg.transition {
+    animation: hideOut .3s ease-in;
+}
+
+.modal-bg.hide {
+    opacity: 0;
+    display: none;
+}
+
+.modal-container {
+    padding: 1.5rem;
+    display: flex;
+    width: 50%;
+    width: fit-content;
+    height: 300px;
+    height: fit-content;
+    margin: 0 auto;
+    border-radius: var(--radius-2);
+    background: #fff;
+}
+
+.modal-conteudo .modal-titulo {
+    font-size: 1.5rem;
+    font-family: var(--fonte-principal);
+} 
+
+@keyframes showIn {
+    from {
+        opacity: 0;
+    }
+    to{
+        opacity: 1;
+    }
+}
+
+@keyframes hideOut {
+    from {
+        opacity: 1;
+    }
+    to{
+        opacity: 0;
+    }
+}
