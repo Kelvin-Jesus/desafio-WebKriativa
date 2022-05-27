@@ -2,6 +2,7 @@
 
 use App\Models\Cliente;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\ProdutosController;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -38,9 +39,25 @@ Route::prefix('pedidos')->group(function () {
 
 });
 
-Route::get('/produtos', function () {
-    return 'produtos';
-})->name('produtos');
+Route::get('/produtos', [ProdutosController::class, 'listaDeProdutos'])->name('produtos');
+Route::prefix('produtos')->group(function () {
+
+    Route::get('/cadastrar-produto', [ProdutosController::class, 'cadastrarProduto'])
+            ->name('cadastrar-produto');
+
+    Route::post('/salvar-cadastro-produto', [ProdutosController::class, 'salvarCadastroProduto'])
+    ->name('salvar-cadastro-produto');
+
+    Route::get('/editar-produto/{idProduto}', [ProdutosController::class, 'editarProduto'])
+            ->name('editar-produto');
+    
+    Route::post('/editar-produto/{idProduto}', [ProdutosController::class, 'salvarEdicaoProduto'])
+            ->name('salvar-edicao-produto');
+
+    Route::delete('/deletar-produto/{idProduto}', [ProdutosController::class, 'deletarProduto'])
+            ->name('deletar-produto');
+
+});
 
 Route::get('/clientes', [ClientesController::class, 'listaDeClientes'])->name('clientes');
 Route::prefix('clientes')->group(function () {

@@ -20,7 +20,7 @@ class ClientesController extends Controller
      */
     public function listaDeClientes() {
         return View('clientes.listagem', [
-            'tituloDaPagina' => 'Listagem de Clientes',
+            'tituloDaPagina' => 'Lista de Clientes',
             'clientes' => Cliente::paginate(4)
         ]);
     }
