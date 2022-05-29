@@ -51,3 +51,14 @@ Após isso, rodar o seguinte comando para iniciar a aplicação
 ```
 php artisan serve
 ```
+
+## Screenshots
+<p>
+    <img src="https://i.ibb.co/Yt3Wrmk/image.png" alt="print da aplicação">
+</p>
+<p>
+    <img src="https://i.ibb.co/8sQWD7f/image.png" alt="print da aplicação">
+</p>
+<p>
+    <img src="https://i.ibb.co/C6B3pGc/image.png" alt="print da aplicação">
+</p>
