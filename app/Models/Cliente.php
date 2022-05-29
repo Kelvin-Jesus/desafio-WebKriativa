@@ -17,4 +17,8 @@ class Cliente extends Model
         'nome_cliente'
     ];
 
+    public function pedido() {
+        return $this->hasOne(Pedido::class, 'id_cliente');
+    }
+
 }

@@ -8,15 +8,15 @@
         @component('components.Header') @endcomponent
 
         <main class="container">
-        @if ($errors->any())
-            <div class="alert alert-danger">
-                <ul>
-                    @foreach ($errors->all() as $error)
-                        <li>{{ $error }}</li>
-                    @endforeach
-                </ul>
-            </div>
-        @endif
+            @if ($errors->any())
+                <div class="alert alert-danger">
+                    <ul>
+                        @foreach ($errors->all() as $error)
+                            <li>{{ $error }}</li>
+                        @endforeach
+                    </ul>
+                </div>
+            @endif
             <form action="{{ route('salvar-cadastro-produto') }}" method="post" class="form w-50 mt-5 m-auto">
                 @csrf
                 <label for="nome" class="form-label">Título</label>
@@ -40,8 +40,8 @@
                         name="preco" 
                         id="preco" 
                         class="form-control @error('preco') is-invalid @enderror" 
-                        aria-label="Exemplo: 3.999" 
-                        placeholder="Ex: 3.999" 
+                        aria-label="Exemplo: 3.999,99" 
+                        placeholder="Ex: 3.999,99" 
                         aria-describedby="basic-addon2"
                     >
                 </div>

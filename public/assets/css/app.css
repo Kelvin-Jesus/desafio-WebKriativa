@@ -240,3 +240,38 @@ td {
         opacity: 0;
     }
 }
+
+.resultados-container {
+    position: relative;
+}
+
+.resultados-produtos, .resultados-clientes {
+    width: 100%;
+    position: absolute;
+    z-index: 9999;
+    top: 50px;
+    height: 200px;
+    height: fit-content;
+    border: 2px solid #C8D9FA;
+    background-color: #E9F0F4;
+    border-radius: var(--radius-2);
+}
+
+.resultados-produtos ul, .resultados-clientes ul {
+    padding: 0;
+    margin: 0;
+    display: flex;
+    flex-direction: column;
+    gap: .8rem;
+}
+
+.resultados-produtos li:nth-of-type(2n+1), .resultados-clientes li:nth-of-type(2n+1) {
+    background: var(--cor-1);
+}
+
+.resultados-produtos li , .resultados-clientes li {
+    cursor: pointer;
+    padding: .5rem;
+    border-radius: var(--radius-2);
+    list-style-type: none;
+}

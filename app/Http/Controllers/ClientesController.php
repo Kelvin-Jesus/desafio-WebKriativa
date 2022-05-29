@@ -19,9 +19,12 @@ class ClientesController extends Controller
      * @return View
      */
     public function listaDeClientes() {
+
+        $clientes = Cliente::paginate(10);
+
         return View('clientes.listagem', [
             'tituloDaPagina' => 'Lista de Clientes',
-            'clientes' => Cliente::paginate(4)
+            'clientes' => $clientes->isEmpty() ? null : $clientes
         ]);
     }
     

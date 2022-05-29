@@ -18,4 +18,8 @@ class Produto extends Model
         'preco'
     ];
 
+    public function pedido() {
+        return $this->belongsTo(Pedido::class, 'id_produto');
+    }
+
 }

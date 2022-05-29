@@ -2,6 +2,7 @@
 
 use App\Models\Cliente;
 use App\Http\Controllers\ClientesController;
+use App\Http\Controllers\PedidosController;
 use App\Http\Controllers\ProdutosController;
 use Illuminate\Support\Facades\Route;
 
@@ -16,26 +17,26 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    // ['data' => Cliente::all()]
-    return view('pedidos.listagem', [
-        'tituloDaPagina' => 'Lista de Pedidos'
-    ]);
-
-})->name('pedidos');
+Route::get('/', [PedidosController::class, 'listarPedidos'])->name('pedidos');
 
 // Cria um grupo com a rota dentro do pefio, assim cada rota dentro deste grupo
 // automáticamente recebe o /nomeDaRota
 // ex: /pedidos/cadastrar-pedido
 Route::prefix('pedidos')->group(function () {
 
-    Route::get('/cadastrar-pedido', function () {
+    Route::get('/cadastrar-pedido', [PedidosController::class, 'cadastrarPedido'])->name('cadastrar-pedido');
 
-        return view('pedidos.cadastrar', [
-            'tituloDaPagina' => 'Cadastrar Pedido'
-        ]);
+    Route::post('/salvar-cadastro-pedido', [PedidosController::class, 'salvarCadastroPedido'])
+            ->name('salvar-cadastro-pedido');
 
-    })->name('cadastrar-pedido');
+    Route::get('/editar-pedido/{idPedido}', [PedidosController::class, 'editarPedido'])
+            ->name('editar-pedido');
+    
+    Route::post('/editar-pedido/{idPedido}', [PedidosController::class, 'salvarEdicaoPedido'])
+            ->name('salvar-edicao-pedido');
+
+    Route::delete('/deletar-pedido/{idPedido}', [PedidosController::class, 'deletarPedido'])
+            ->name('deletar-pedido');
 
 });
 

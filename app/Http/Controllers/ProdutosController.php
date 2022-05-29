@@ -6,9 +6,7 @@ use App\Models\Cliente;
 use App\Models\Produto;
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
-use App\Http\Requests\EditarClienteRequest;
 use App\Http\Requests\EditarProdutoRequest;
-use App\Http\Requests\CadastrarClienteRequest;
 use App\Http\Requests\CadastrarProdutoRequest;
 
 class ProdutosController extends Controller
@@ -22,9 +20,12 @@ class ProdutosController extends Controller
      * @return View
      */
     public function listaDeProdutos() {
+
+        $produtos = Produto::paginate(10);
+
         return View('produtos.listagem', [
             'tituloDaPagina' => 'Lista de Produtos',
-            'produtos' => Produto::paginate(4)
+            'produtos' => $produtos->isEmpty() ? null : $produtos
         ]);
     }
     
@@ -112,6 +113,15 @@ class ProdutosController extends Controller
         return redirect('produtos')->with('msg', 'Produtos deletado com sucesso!');
     }
 
+        
+    /**
+     * fomatarPreco
+     *
+     * Recebe o preço do produto no padrão BR e formata para o padrão do BD
+     * 
+     * @param  string $preco
+     * @return string
+     */
     private function fomatarPreco($preco) {
         $preco = str_replace('.', '', $preco);
         return str_replace(',', '.', $preco);

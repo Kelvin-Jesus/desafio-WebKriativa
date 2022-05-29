@@ -36,7 +36,7 @@
                 </div>
             @endif
 
-            @if (isset($produtos) && $produtos !== null)
+            @if (isset($produtos) && $produtos !== null && !empty($produtos))
             <table class="table table-striped mt-5">
                 <thead>
                     <tr>
