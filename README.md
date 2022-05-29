@@ -53,12 +53,12 @@ php artisan serve
 ```
 
 ## Screenshots
-<p>
+<p align="center">
     <img src="https://i.ibb.co/Yt3Wrmk/image.png" alt="print da aplicação">
 </p>
-<p>
+<p align="center">
     <img src="https://i.ibb.co/8sQWD7f/image.png" alt="print da aplicação">
 </p>
-<p>
+<p align="center">
     <img src="https://i.ibb.co/C6B3pGc/image.png" alt="print da aplicação">
 </p>
