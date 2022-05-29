@@ -31,8 +31,10 @@ com as seguintes funcionalidades:</p>
 
 ## Requisitos
 
-PHP:      ^8.0
-Laravel:  ^8.75
+<ul>
+    <li>PHP: ^8.0</li>
+    <li>Laravel: ^8.75</li>
+</ul>
 
 ## Instalando
 
