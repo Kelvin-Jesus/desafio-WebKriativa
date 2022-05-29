@@ -48,6 +48,11 @@ composer install
     Após instalar as dependências, vá até o arquivo .env.example que se encontra na raiz do projeto e renomear para .env
 </p>
 
+<p>
+Rode o seguinte comando: 
+```php artisan key:generate```
+</p>
+
 <p>Abra o arquivo .env e configure os dados para acesso ao banco de dados:</p>
 <img src="https://i.ibb.co/VxPy3dM/image.png" alt="Configurações de conexão com o Banco de Dados">
 
