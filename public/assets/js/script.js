@@ -6,6 +6,36 @@ window.addEventListener('DOMContentLoaded', () => {
     const buscarCliente = document.querySelector('.buscar-cliente')
     const resultadosProdutosContainer = document.querySelector('.resultados-produtos')
     const resultadosClientesContainer = document.querySelector('.resultados-clientes')
+    const filtrarItens = document.querySelector('.filtrar-itens')
+
+    if ( filtrarItens ) {
+        
+        filtrarItens.addEventListener('input', ({ target }) => {
+    
+            const tbody = document.querySelector('tbody')
+            tbody.querySelectorAll('tr').forEach( elemento => {
+    
+                const conteudoELemento = String(elemento.textContent.toLowerCase())
+                const textoPesquisado = String(target.value.toLowerCase())
+    
+                if ( textoPesquisado === '' ) {
+                    elemento.classList.remove('d-none')
+                    return;
+                }
+    
+                if( conteudoELemento.includes(textoPesquisado) === false ) {
+                    elemento.classList.add('d-none')
+                    return;
+                }
+    
+                elemento.classList.remove('d-none')
+    
+            })
+    
+        });
+
+    }
+
 
     if (tabela) {
 

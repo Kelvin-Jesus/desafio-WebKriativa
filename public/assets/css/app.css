@@ -275,3 +275,39 @@ td {
     border-radius: var(--radius-2);
     list-style-type: none;
 }
+
+@media only screen and (max-width: 600px) {
+
+    .logo {
+        width: 120px;
+        width: fit-content;
+    }
+
+    header.container div {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    header.container nav {
+        width: fit-content;
+        flex-wrap: wrap;
+        gap: 1rem;
+    }
+
+    .btn-custom {
+        width: fit-content;
+        padding: .8rem 1rem;
+        font-size: .8rem;
+    }
+
+    .table-striped > tbody > tr {
+        height: fit-content;
+        text-overflow: ellipsis;
+
+        /* Required for text-overflow to do anything */
+        white-space: nowrap;
+        overflow: hidden;
+    }
+}

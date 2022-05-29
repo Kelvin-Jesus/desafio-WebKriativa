@@ -10,9 +10,15 @@
 
         <main class="container">
 
-            <div class="d-flex justify-content-end gap-3">
+        <div class="d-flex justify-content-end gap-3">
                 <div class="input-group mb-3 w-50">
-                    <input type="text" class="form-control" placeholder="Filtrar itens" aria-label="Filtrar itens" aria-describedby="basic-addon2">
+                    <input 
+                        type="text" 
+                        class="form-control filtrar-itens" 
+                        placeholder="Filtrar itens" 
+                        aria-label="Filtrar itens" 
+                        aria-describedby="basic-addon2"
+                    >
                     <span class="input-group-text bg-gradiente" id="basic-addon2"><i class="fa-solid fa-magnifying-glass"></i></span>
                 </div>
                 <div class="">
@@ -37,38 +43,40 @@
             @endif
 
             @if (isset($produtos) && $produtos !== null && !empty($produtos))
-            <table class="table table-striped mt-5">
-                <thead>
-                    <tr>
-                        <th scope="col-1">#</th>
-                        <th scope="col-4">Título</th>
-                        <th scope="col-2">Data de cadastro</th>
-                        <th scope="col-1">Preço</th>
-                        <th scope="col-1">Ações</th>
-                    </tr>
-                </thead>
-                <tbody>
-                        @foreach ($produtos as $produto)
+            <section class="table-responsive">
+                <table class="table table-striped mt-5">
+                    <thead>
                         <tr>
-                            <td>{{ $produto->id_produto }}</td>
-                            <td>{{ $produto->nome_produto }}</td>
-                            <td>{{ Carbon\Carbon::parse($produto->data_criacao)->format('d-m-Y') }}</td>
-                            <td>{{ number_format($produto->preco, 2, ',', '.') }}</td>
-                            <td class="d-flex gap-3">
-                                <a 
-                                    href="{{ route('editar-produto', ['idProduto'=>$produto->id_produto]) }}" 
-                                    class="btn btn-editar"
-                                >Editar</a>
-                                <a 
-                                    class="btn btn-excluir" 
-                                    data-url="{{ route('deletar-produto', ['idProduto'=>$produto->id_produto]) }}"
-                                >Excluir</a>
-                            </td>
+                            <th scope="col-1">#</th>
+                            <th scope="col-4">Título</th>
+                            <th scope="col-2">Data de cadastro</th>
+                            <th scope="col-1">Preço</th>
+                            <th scope="col-1">Ações</th>
                         </tr>
-                        @endforeach
-                </tbody>
-            </table>
-            {{ $produtos->links('pagination::bootstrap-4') }}
+                    </thead>
+                    <tbody>
+                            @foreach ($produtos as $produto)
+                            <tr>
+                                <td>{{ $produto->id_produto }}</td>
+                                <td>{{ $produto->nome_produto }}</td>
+                                <td>{{ Carbon\Carbon::parse($produto->data_criacao)->format('d-m-Y') }}</td>
+                                <td>{{ number_format($produto->preco, 2, ',', '.') }}</td>
+                                <td class="d-flex gap-3">
+                                    <a 
+                                        href="{{ route('editar-produto', ['idProduto'=>$produto->id_produto]) }}" 
+                                        class="btn btn-editar"
+                                    >Editar</a>
+                                    <a 
+                                        class="btn btn-excluir" 
+                                        data-url="{{ route('deletar-produto', ['idProduto'=>$produto->id_produto]) }}"
+                                    >Excluir</a>
+                                </td>
+                            </tr>
+                            @endforeach
+                    </tbody>
+                </table>
+                {{ $produtos->links('pagination::bootstrap-4') }}
+            </section>
             @else
                 <p class="mt-5 text-center">Nenhum item encontrado!</p>
             @endif
