@@ -1,67 +1,51 @@
 <p align="center">
-<img src="https://i.ibb.co/Kq7GBxN/image.png" alt="image" border="0">
+<img src="https://i.ibb.co/Kq7GBxN/image.png" alt="Logo do projeto" border="0">
 </p>
 
 <p align="center">
-<a href="https://travis-ci.org/laravel/framework"><img src="https://travis-ci.org/laravel/framework.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
+    <h1>Uma apliação para gerenciar pedidos de compra</h1>
 </p>
 
-## About Laravel
+## Desafio para a Vaga da WebKriativa
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+<p>O desafio consiste em implementar uma aplicação Web utilizando algum framework
+PHP(preferencialmente CodeIgniter) e um banco de dados relacional MySQL ou
+Postgres(preferencialmente), a criação das tabelas é livre para sua implementação.
+</p>
+<p>
+Você vai criar uma aplicação de cadastro de pedidos de compra, a partir de uma modelagem inicial,
+com as seguintes funcionalidades:</p>
+● CRUD de clientes.
+● CRUD de produtos.
+● CRUD de pedidos de compra, com status (Em Aberto, Pago ou Cancelado)
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+## Tecnologias Utilizadas:
+<ul>
+    <li>HTML5</li>
+    <li>CSS3</li>
+    <li>Javascript</li>
+    <li>PHP ( Laravel )</li>
+    <li>MYSQL</li>
+    <li>Bootstrap 5</li>
+</ul>
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Requisitos
 
-## Learning Laravel
+PHP:      ^8.0
+Laravel:  ^8.75
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+## Instalando
 
-If you don't feel like reading, [Laracasts](https://laracasts.com) can help. Laracasts contains over 1500 video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+Rodar os seguintes comandos:
+```
+git clone https://github.com/Kelvin-Jesus/desafio-WebKriativa
+cd desafio-WebKriativa
+composer install
+```
+Após instalar as dependências, abra o arquivo .env que se encontra na raiz do projeto e configure os dados para acesso ao banco de dados:
+<img src="https://i.ibb.co/VxPy3dM/image.png" alt="Configurações de conexão com o Banco de Dados">
 
-## Laravel Sponsors
-
-We would like to extend our thanks to the following sponsors for funding Laravel development. If you are interested in becoming a sponsor, please visit the Laravel [Patreon page](https://patreon.com/taylorotwell).
-
-### Premium Partners
-
-- **[Vehikl](https://vehikl.com/)**
-- **[Tighten Co.](https://tighten.co)**
-- **[Kirschbaum Development Group](https://kirschbaumdevelopment.com)**
-- **[64 Robots](https://64robots.com)**
-- **[Cubet Techno Labs](https://cubettech.com)**
-- **[Cyber-Duck](https://cyber-duck.co.uk)**
-- **[Many](https://www.many.co.uk)**
-- **[Webdock, Fast VPS Hosting](https://www.webdock.io/en)**
-- **[DevSquad](https://devsquad.com)**
-- **[Curotec](https://www.curotec.com/services/technologies/laravel/)**
-- **[OP.GG](https://op.gg)**
-- **[WebReinvent](https://webreinvent.com/?utm_source=laravel&utm_medium=github&utm_campaign=patreon-sponsors)**
-- **[Lendio](https://lendio.com)**
-
-## Contributing
-
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
-
-## Code of Conduct
-
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
-
-## Security Vulnerabilities
-
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
-
-## License
-
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
-# desafio-WebKriativa
+Após isso, rodar o seguinte comando para iniciar a aplicação
+```
+php artisan serve
+```
